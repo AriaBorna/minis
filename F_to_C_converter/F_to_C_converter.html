@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F to C</title>
+    <link rel="stylesheet" href="F_to_C_converter.css">
+    <script src="F_to_C_converter.js"></script>
+</head>
+<body>
+    <label id="title" for="F">Insert the degree and choose unit:</label>
+    <input name="F" type="number" id="degree">
+    <form id="unit" action="#">
+        <input id="unitf" type="radio" name="unit">
+        <label for="unit">Fahrenheit</label>
+        <input id="unitc" type="radio" name="unit">
+        <label for="unit">Celsius</label>
+    </form>
+    <button onclick="convert()">Convert Now</button>
+    <p id="result"></p>
+
+
+</body>
+</html>
