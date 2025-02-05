@@ -1,0 +1,56 @@
+How to Use
+1. Import in an ES Module (ESM) Project
+If your project uses ES Modules, import the function like this:
+
+import { insertionSort } from "./insertionSort.js";
+
+const array = [5, 3, 8, 4, 2];
+console.log(insertionSort(array)); 
+// Output: [2, 3, 4, 5, 8]
+
+2. Use in a CommonJS (Node.js) Project
+If you're using Node.js (CommonJS), update insertionSort.js to:
+
+function insertionSort(array) {
+    let length = array.length;
+    for (let i = 1; i < length; i++) {
+        let current = array[i];
+        let j = i - 1;
+
+        while (j >= 0 && array[j] > current) {
+            array[j + 1] = array[j];
+            j--;
+        }
+
+        array[j + 1] = current;
+    }
+
+    return array;
+}
+
+module.exports = insertionSort;
+Then, import it like this:
+
+const insertionSort = require("./insertionSort");
+
+const array = [5, 3, 8, 4, 2];
+console.log(insertionSort(array)); 
+// Output: [2, 3, 4, 5, 8]
+
+How It Works
+The function loops through the array starting from index 1 (assuming the first element is already sorted).
+It picks the current element and compares it with previous elements.
+If the previous element is greater than current, it shifts elements to the right.
+The function places current in the correct sorted position.
+The process repeats until the entire array is sorted.
+Example
+
+import { insertionSort } from "./insertionSort.js";
+
+const numbers = [10, 7, 3, 9, 2];
+const sortedNumbers = insertionSort(numbers);
+console.log(sortedNumbers); 
+// Output: [2, 3, 7, 9, 10]
+
+License
+This project is open-source and available under the MIT License. Feel free to use and modify it!
