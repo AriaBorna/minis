@@ -1,4 +1,4 @@
-function insertionSort(array){
+export function insertionSort(array){
     let lenght = array.length;
     for(i = 1; i < length; i++){
         let current = array[i];
